@@ -1,0 +1,55 @@
+<html>
+<head>     
+<script language="javascript">
+var cpt = 0;
+function changecouleur(couleur) {
+  for (var i = 1; i <= 9; i++){
+      document.getElementById('texte'+i).style.backgroundColor='#FFFFFF';
+      document.getElementById('texte'+i).innerHTML="";
+  } 
+  for (var i = 1; i <= 9; i++){
+    var j = (Math.floor((Math.random() * 9) + 1));
+      document.getElementById('texte'+j).style.backgroundColor=couleur;
+      document.getElementById('texte'+j).innerHTML="<a href='#' onclick='cptpoint("+ j +")'>taupe</a>";
+  }
+  timer = setTimeout("changecouleur('#000000')", 3000)
+}   
+function cptpoint(k){
+  cpt = cpt + 10;
+  document.getElementById('cpt').innerHTML=cpt;
+  document.getElementById('texte'+k).style.backgroundColor='#FFFFFF'; 
+  document.getElementById('texte'+k).innerHTML=""; 
+}  
+var timer = setTimeout("changecouleur('#000000')",3000);                           
+</script>
+</head>
+<body>
+
+
+
+<table align="left" width="100px">
+<tr>
+</tr>
+<tr>
+  <td id="texte1" class="zone">&nbsp;</td>
+  <td id="texte2" class="zone">&nbsp;</td>
+  <td id="texte3" class="zone">&nbsp;</td>
+</tr>
+<tr>
+  <td id="texte4" class="zone">&nbsp;</td>
+  <td id="texte5" class="zone">&nbsp;</td>
+  <td id="texte6" class="zone">&nbsp;</td>
+</tr>
+<tr>
+  <td id="texte7" class="zone">&nbsp;</td>
+  <td id="texte8" class="zone">&nbsp;</td>
+  <td id="texte9" class="zone">&nbsp;</td>
+</tr>
+<tr>
+  <td id="cpt">0</td>
+  <td></td>
+  <td></td>
+</tr>
+</table>
+</body>
+</html>
